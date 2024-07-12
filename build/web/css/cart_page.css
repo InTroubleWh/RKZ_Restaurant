@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+}
+#cart-items {
+    height: 250px;
+    overflow-y: auto;
+}
+
+#cart-buy {
+    width: 90%;
+    color: white;
+    background-color: orange;
+    border: none;
+    height: 2rem;
+    font-weight: 800;
+}
+#cart-buy:hover {
+    position: relative;
+    width: 95%;
+    height: 2.5rem;
+    bottom: 10px;
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.container h1, h2 {
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+}
+.container hr {
+    margin: 1rem;
+}
+.item-list, .cart {
+    margin-bottom: 20px;
+}
+.item, .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #F4845F;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: #FFFFFF;
+    gap: 1rem;
+}
+.item-name, .cart-item-name {
+    flex: 1;
+}
+.increase-qty, .decrease-qty, .remove-button {
+    padding: 5px 10px;
+    background-color: #F27059;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.increase-qty:hover, .decrease-qty:hover, .remove-button:hover {
+    background-color: #F25C54;
+}
+.remove-button {
+    background-color: #F25C54;
+}
+.total {
+    font-weight: bold;
+    color: black;
+}
+.item-quantity {
+    border: none;
+    border-radius: 10px;
+    width: 50px;
+    height: 1.5rem;
+    text-align: center;
+}
+
+form {
+    margin: 20px;
+    font-family: Arial, sans-serif; /* Change font to Arial */
+}
+
+form p {
+    margin-bottom: 10px; /* Add bottom margin to paragraph elements */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+/* Style the city and post code side by side */
+form .form-row {
+    display: flex;
+    justify-content: space-between;
+}
+.FormContainer {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.payment-form {
+    width: 80%;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.payment-form form {
+    text-align: left;
+}
+.payment-form form label {
+    display: block;
+    margin-top: 10px;
+}
+.payment-form form input,
+.payment-form form select,
+.payment-form form button {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.payment-form form button {
+    margin-top: 20px;
+    background-color: #fc7560;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.payment-form form button:hover {
+    background-color: #fa7c70;
+}

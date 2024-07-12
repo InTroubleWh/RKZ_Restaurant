@@ -1,0 +1,126 @@
+/* Existing styles */
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+*
+{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+.reservation-form {
+    width: 80%;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.reservation-form form {
+    text-align: left;
+}
+.reservation-form form label {
+    display: block;
+    margin-top: 10px;
+}
+.reservation-form form input,
+.reservation-form form select,
+.reservation-form form button {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.reservation-form form button {
+    margin-top: 20px;
+    background-color: #fc7560;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.reservation-form form button:hover {
+    background-color: #fa7c70;
+}
+/* Pop-up overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.popup {
+    position: fixed;
+    background-color: white;
+    width: 300px;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+.popup button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 10px 10px;
+    border-radius: 5px;
+}
+.popup button:hover {
+    background-color: #0056b3;
+}
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.phone-input-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    width: calc(100% - 20px);
+    max-width: 400px;
+}
+
+.country-code {
+    width: 17%;
+    padding: 10px;
+    font-size: 16px;
+    border-right: 1px solid #ddd;
+    background-color: #f9f9f9;
+    color: #888; /* Makes the text slightly faint */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.phone-number-input {
+    width: 83%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 0 4px 4px 0;
+}

@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.admin-section {
+    border: 1px solid #ccc;
+	height: 400px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.table-container {
+    height: 270px; /* Increased height */
+    overflow-y: auto; /* Scrollable */
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+}
+
+table {
+    width: 100%; /* Ensure table fills its container */
+    border-collapse: collapse; /* Remove space between table cells */
+}
+
+table tr {
+    height: 30px; /* Adjust height of each row */
+}
+
+table th, table td {
+    padding: 8px; /* Add padding to table cells for spacing */
+    text-align: left; /* Align text within cells as needed */
+    border: 1px solid #ccc; /* Add borders to table cells */
+}
+
+
+table th {
+    background-color: #f2f2f2;
+}
+
+button {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.admin-section-buttons {
+    display:flex;
+    gap: 1rem;
+}
+
+/* Modal */
+#edit-modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure modal is on top */
+    max-width: 80%;
+    width: 500px; /* Adjust width as needed */
+}
+
+/* Modal Close Button */
+#edit-modal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* Modal Content (Form) */
+#edit-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#edit-form label {
+    margin-bottom: 10px;
+}
+
+#edit-form input[type="text"],
+#edit-form input[type="hidden"],
+#edit-form button[type="submit"] {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#edit-form button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#edit-form button[type="submit"]:hover {
+    background-color: #45a049;
+}
