@@ -12,16 +12,14 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/kusma/Documents/NetBeansProjects/Project%202_RKZ%20Restaurant/web/header.jsp</file>
             <file>file:/C:/Users/kusma/Documents/NetBeansProjects/Project%202_RKZ%20Restaurant/src/java/servlet/loginServlet.java</file>
-            <file>file:/C:/Users/kusma/Documents/NetBeansProjects/Project%202_RKZ%20Restaurant/web/css/admin_page.css</file>
-            <file>file:/C:/Users/kusma/Documents/NetBeansProjects/Project%202_RKZ%20Restaurant/src/java/controller/menuDAO.java</file>
+            <file>file:/C:/Users/kusma/Documents/NetBeansProjects/Project%202_RKZ%20Restaurant/web/js/script.js</file>
+            <file>file:/C:/Users/kusma/Documents/NetBeansProjects/Project%202_RKZ%20Restaurant/web/js/cart.js</file>
+            <file>file:/C:/Users/kusma/Documents/NetBeansProjects/Project%202_RKZ%20Restaurant/web/css/style.css</file>
             <file>file:/C:/Users/kusma/Documents/NetBeansProjects/Project%202_RKZ%20Restaurant/web/js/menu.js</file>
-            <file>file:/C:/Users/kusma/Documents/NetBeansProjects/Project%202_RKZ%20Restaurant/web/aboutUs.html</file>
-            <file>file:/C:/Users/kusma/Documents/NetBeansProjects/Project%202_RKZ%20Restaurant/src/java/servlet/adminPageMenu.java</file>
-            <file>file:/C:/Users/kusma/Documents/NetBeansProjects/Project%202_RKZ%20Restaurant/web/admin.jsp</file>
-            <file>file:/C:/Users/kusma/Documents/NetBeansProjects/Project%202_RKZ%20Restaurant/web/js/admin.js</file>
-            <file>file:/C:/Users/kusma/Documents/NetBeansProjects/Project%202_RKZ%20Restaurant/web/cart.jsp</file>
-            <file>file:/C:/Users/kusma/Documents/NetBeansProjects/Project%202_RKZ%20Restaurant/web/css/cart_page.css</file>
+            <file>file:/C:/Users/kusma/Documents/NetBeansProjects/Project%202_RKZ%20Restaurant/web/js/reservation.js</file>
+            <file>file:/C:/Users/kusma/Documents/NetBeansProjects/Project%202_RKZ%20Restaurant/web/menu.jsp</file>
         </group>
     </open-files>
 </project-private>

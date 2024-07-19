@@ -32,7 +32,6 @@ function loadMenuItems(category, sliderId) {
         },
         error: function (xhr, status, error) {
             console.error('Error loading menu items:', status, error);
-            alert('Error loading menu items');
         }
     });
 }
@@ -62,10 +61,9 @@ function renderCart() {
         },
         error: function (xhr, status, error) {
             if (xhr.status === 401) {
-                $('#login-modal').css('display', 'flex');
+                $('#loginRequiredOverlay').show();
             } else {
                 console.error('Error loading cart items:', status, error);
-                alert('Error loading cart items');
             }
         }
     });
@@ -82,7 +80,9 @@ function updateCartItem(itemId, quantity) {
             renderCart(); // Refresh cart display after update
         },
         error: function (xhr, status, error) {
-            console.error('Error updating cart item:', status, error);
+            if (xhr.status === 401) {
+                $('#loginRequiredOverlay').show();
+            }
         }
     });
 }
@@ -97,7 +97,11 @@ function removeCartItem(itemId) {
             renderCart(); // Refresh cart display after removal
         },
         error: function (xhr, status, error) {
-            console.error('Error removing cart item:', status, error);
+            if (xhr.status === 401) {
+                $('#loginRequiredOverlay').show();
+            } else {
+                console.error('Error removing cart item:', status, error);
+            }
         }
     });
 }

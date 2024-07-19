@@ -34,9 +34,6 @@ $(document).ready(function () {
                     $loginModal.css("display", "none");
                     // Reload some part of the page or perform other actions
                     refreshHomePage(); // Example function to reload specific content
-                } else if (response === "admin") {
-                    // Redirect to admin page if the user is an admin
-                    window.location.href = "admin.jsp";
                 } else {
                     // Show error message if login was not successful
                     $errorMessage.text("Login failed. Please try again.").show();
@@ -48,7 +45,7 @@ $(document).ready(function () {
                 if (xhr.status === 400) {
                     errorMsg = "Invalid request.";
                 } else if (xhr.status === 401) {
-                    errorMsg = xhr.responseText; // Assuming server sends a descriptive error message
+                    errorMsg = "Wrong username, email, or password.";
                 } else {
                     errorMsg = "An unexpected error occurred. Please try again later.";
                 }
@@ -62,4 +59,9 @@ $(document).ready(function () {
         $("#loginNavbar").load(" #loginNavbar > *");
         // You can load specific elements or trigger other updates as needed
     }
+
+    $('#loginPopUpOK').click(function() {
+        // Close the confirmation popup
+        $('#loginRequiredOverlay').hide();
+    });
 });

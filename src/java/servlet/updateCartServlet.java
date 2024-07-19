@@ -25,7 +25,11 @@ public class updateCartServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         try {
-            HttpSession session = request.getSession();
+            HttpSession session = request.getSession(false);
+            if (session == null || session.getAttribute("userId") == null) {
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                return;
+            }
             int userId = (int) session.getAttribute("userId");
 
             // Read the JSON data from the request body
@@ -82,4 +86,3 @@ public class updateCartServlet extends HttpServlet {
         return "Servlet for updating cart items";
     }
 }
-

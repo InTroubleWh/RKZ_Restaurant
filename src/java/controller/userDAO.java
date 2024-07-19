@@ -52,32 +52,4 @@ public class userDAO {
             throw e; // Rethrow the exception after logging it
         }
     }
-    
-    public boolean isAdmin(int userId) {
-        boolean isAdmin = false;
-        String sql = "SELECT * FROM admin JOIN user_accounts ON admin.userId = user_accounts.userId WHERE admin.userId = ?";
-        try {
-            ps = con.prepareStatement(sql);
-            ps.setInt(1, userId);
-            rs = ps.executeQuery();
-            if(rs.next()) {
-                isAdmin = true;
-                ps.close();
-                rs.close();
-                return isAdmin;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        finally {
-            try{
-            if (rs!=null) {rs.close();}
-            if (ps!=null) {ps.close();}
-            } catch(SQLException e) {
-                System.out.println("Error closing resources");
-            }
-        }
-        return isAdmin;
-    }
-
 }

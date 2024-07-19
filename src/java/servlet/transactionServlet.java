@@ -23,17 +23,21 @@ public class transactionServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         String outlet = request.getParameter("outletId");
         int outletId = Integer.parseInt(outlet);
         String City = request.getParameter("city-select");
         String PostCode = request.getParameter("post-code");
         String streetAddress = request.getParameter("street-address");
-        String address = City+" ".concat(PostCode)+" ".concat(streetAddress);
+        String address = City + " ".concat(PostCode) + " ".concat(streetAddress);
         String paymentMethod = request.getParameter("payment");
         //pass along informations
+        if (request.getSession(false) == null || request.getSession(false).getAttribute("userId") == null) {
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            return;
+        }
         int userId = (int) request.getSession().getAttribute("userId");
-        
+
         Connection con = MyConnection.getConnection();
         cartDAO cartdao = new cartDAO(con);
         transactionDAO transactiondao = new transactionDAO(con);
@@ -41,7 +45,7 @@ public class transactionServlet extends HttpServlet {
             //get this user's cart
             List<cartItemBean> items = cartdao.getCartItems(userId);
             BigDecimal totalAmount = BigDecimal.ZERO;
-            for(cartItemBean item : items) {
+            for (cartItemBean item : items) {
                 BigDecimal price = item.getPrice();
                 BigDecimal qty = new BigDecimal(item.getQuantity());
                 BigDecimal amount = price.multiply(qty);
@@ -56,7 +60,7 @@ public class transactionServlet extends HttpServlet {
             transaction.setAddress(address);
             transaction.setPaymentMethod(paymentMethod);//initialize transactionBean
             int status = transactiondao.saveTransaction(transaction); //save user's cart 
-            if (status>0) {
+            if (status > 0) {
                 response.sendRedirect("home.jsp");
             }
         } catch (SQLException e) {

@@ -21,7 +21,10 @@ public class removeFromCartServlet extends HttpServlet {
         try {
             con = MyConnection.getConnection();
             cartDAO dao = new cartDAO(con);
-
+            if(request.getSession(false)==null||request.getSession(false).getAttribute("userId") == null) {
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                return;
+            }
             // Retrieve userId from session
             int userId = (int) request.getSession().getAttribute("userId");
 

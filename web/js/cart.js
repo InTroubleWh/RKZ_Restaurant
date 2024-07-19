@@ -7,13 +7,13 @@ $(document).ready(function () {
             success: function (cartItems) {
                 renderCartItems(cartItems);
             },
-            error: function (xhr) {
-                if (xhr.status === 401) { // Unauthorized error
-                    $('#login-modal').css('display', 'flex'); // Show login modal
-                } else {
-                    alert('An error occurred while retrieving cart items.');
-                }
+            error: function (xhr, status, error) {
+            if (xhr.status === 401) {
+                $('#loginRequiredOverlay').show();
+            } else {
+                console.error('Error loading cart items:', status, error);
             }
+        }
         });
     }
 

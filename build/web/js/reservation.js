@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // Get elements
-    const $dateInput = $('#dob');
+    const $dateInput = $('#reserve_date');
     const $timeInput = $('#time');
     const $errorMessage = $('<p class="error-message"></p>').insertBefore('#confirmBtn');
 
@@ -28,12 +28,12 @@ $(document).ready(function () {
     // Update time every minute
     setInterval(updateTime, 60000);
 
-    // Set minimum date for reservation to today
+    // Set minimum date for reservation to today, input restriction.
     const today = new Date().toISOString().split('T')[0];
     $dateInput.attr('min', today);
 
-     // Event listener for form submission
-    $('form').on('submit', function(event) {
+    // Event listener for form submission
+    $('#reservation-form').on('submit', function (event) {
         event.preventDefault();
 
         // Serialize form data
@@ -45,22 +45,26 @@ $(document).ready(function () {
             url: 'reserve',
             data: formData,
             dataType: 'json',
-            success: function(response) {
+            success: function (response) {
                 if (response.success) {
                     // Reservation successful
                     alert('Reservation successful!');
-                    // Optionally, redirect to a success page or refresh current page
                 } else {
-                    // Reservation failed or validation error
-                    alert('Reservation failed: ' + response.message);
                     // Display error message on the page
                     $('.error-message').text(response.message);
                 }
             },
-            error: function() {
-                alert('Error processing reservation');
+            error: function (xhr) {
+                if (xhr.status === 401) {
+                    $('#loginRequiredOverlay').show();
+                }
             }
         });
+    });
+    
+    $('#loginPopUpOK').click(function() {
+        // Close the confirmation popup
+        $('#loginRequiredOverlay').hide();
     });
 });
 

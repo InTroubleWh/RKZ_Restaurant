@@ -57,7 +57,7 @@
                 <P>We're open everyday!</p>
                 <p>8:00am - 10:00pm</p>
             </center>
-            <a href="reservationPage.html"><button>Reserve a Seat</button></a>
+            <a href="reservation.jsp">p<button>Reserve a Seat</button></a>
         </div>
     </div>
     <%@include file="footer.jsp" %>

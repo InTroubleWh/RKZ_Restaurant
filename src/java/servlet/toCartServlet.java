@@ -19,8 +19,12 @@ public class toCartServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
+        HttpSession session = request.getSession(false);
         int item_Id = Integer.parseInt(request.getParameter("itemId"));
+        if (session == null || session.getAttribute("userId") == null) {
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            return;
+        }
         int user_id = (int) session.getAttribute("userId");
         Connection con = MyConnection.getConnection();
         cartDAO cartdao = new cartDAO(con);

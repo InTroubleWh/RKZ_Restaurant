@@ -34,12 +34,8 @@ public class loginServlet extends HttpServlet {
                 session.setAttribute("username", user.getUsername());
                 session.setAttribute("email", user.getEmail());
                 session.setAttribute("loggedIn", true);
-                boolean isAdmin = dao.isAdmin(user.getUserId());
-                System.out.println("Admin is " + isAdmin);
-                if (isAdmin) {
-                    session.setAttribute("isAdmin", true);
-                }
-                out.write(isAdmin ? "admin" : "success");
+                response.getWriter().write("success");
+                response.setStatus(HttpServletResponse.SC_CREATED);
             } else {
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                 out.write("Invalid username or password.");

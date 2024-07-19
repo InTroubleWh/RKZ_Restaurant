@@ -13,7 +13,7 @@
     <main>
         <div class="container">
             <div class="reservation-form">
-                <form action="reserve" method="post">
+                <form id="reservation-form" action="reserve" method="post">
                     <h1 align="center">Reservation</h1>
                     <hr>
                     <label for="username">Customer Name: </label>
@@ -48,15 +48,6 @@
 
                     <button type="submit" id="confirmBtn" align="center">Confirmation</button>
                 </form>
-            </div>
-        </div>
-
-        <!-- Pop-up overlay -->
-        <div class="overlay" id="overlay">
-            <div class="popup">
-                <p>Are you sure you want to reserve?</p>
-                <button onclick="proceedReservation()">Yes</button>
-                <button onclick="closePopup()">No</button>
             </div>
         </div>
     </main>
